@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: black;
+  /* grid-template-rows: 2; */
+}
+
+.card {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.card:nth-child(even) {
+  grid-row: 2;
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hotel - cool | Suites{% endblock %}
+
+{% block body %}
+    <div class="container-mt 4 col-3">
+        <h1>Nos suites :</h1>
+        {% for suite in suites %}
+        <div class="grid">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">{{ suite.titre }}</div>
+                <div class="card-body">
+                    <h4 class="card-title">{{ suite.prix }}</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+    </div>
+{% endblock %}
