@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="container">
+    <h1 class="mt-2">Ajouter une nouvelle suite :</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="flash-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {{ form_start(form) }}
+    <div class="form-error">
+        {{ form_errors(form) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.titre) }}
+        {{ form_widget(form.titre) }}
+        {{ form_errors(form.titre) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.image) }}
+        {{ form_widget(form.image) }}
+        {{ form_errors(form.image) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.description) }}
+        {{ form_widget(form.description) }}
+        {{ form_errors(form.description) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.galerieImage) }}
+        {{ form_widget(form.galerieImage) }}
+        {{ form_errors(form.galerieImage) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.prix) }}
+        {{ form_widget(form.prix) }}
+        {{ form_errors(form.prix) }}
+    </div>
+        <div class="form-group">
+        {{ form_row(form.submit) }}
+    </div>
+{{ form_end(form) }}
+</div>
+{% endblock %}
