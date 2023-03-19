@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hotel - cool | Hotels{% endblock %}
+{% block body %}
+        <h1 class="mt-5">Nos Hotels :</h1>
+
+        <div class="row">
+        {% for hotel in hotels %}
+            <div class="col-4 col-sm-2 col-md-2 col-lg-2 col-xl-2 mt-3">
+                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header">{{ hotel.nomHotel }}</div>
+                    <div class="card-body">
+                        <img class="card-image" src="#" alt="" width="200px" height="150px">
+                    </div>
+                </div>
+            </div>
+        
+        {% endfor %}
+        </div>
+                <div class="navigation d-flex justify-content-center mt-5">
+                    {{ knp_pagination_render(hotels) }}
+                </div>
+
+{% endblock %}

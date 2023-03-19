@@ -42,6 +42,10 @@ class Suite
     #[Assert\LessThan(1500)]
     private ?float $prix = null;
 
+    #[ORM\ManyToOne(inversedBy: 'suites')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Hotel $hotel = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +107,18 @@ class Suite
     public function setPrix(float $prix): self
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getHotel(): ?Hotel
+    {
+        return $this->hotel;
+    }
+
+    public function setHotel(?Hotel $hotel): self
+    {
+        $this->hotel = $hotel;
 
         return $this;
     }
